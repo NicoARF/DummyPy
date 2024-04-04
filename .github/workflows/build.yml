@@ -28,7 +28,7 @@ jobs:
 
     - name: Run tests
       run: |
-        python -m unittest discover tests
+        python3 src/main.py
          
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
