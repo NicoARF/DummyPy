@@ -26,6 +26,13 @@ jobs:
         python3 -m pip install --upgrade pip
         pip3 install -r requirements.txt
 
+    - name: Download Chrome lasted
+      run: |
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O chrome.deb
+
+    - name: Install Chrome lasted
+      run: sudo dpkg
+    
     - name: Run tests
       run: |
         python3 src/main.py
@@ -34,3 +41,6 @@ jobs:
       uses: SonarSource/sonarcloud-github-action@master
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+    - name: Cleanup
+      run: rm chrome.deb
