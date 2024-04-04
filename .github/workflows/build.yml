@@ -32,6 +32,9 @@ jobs:
 
     - name: Install Chrome lasted
       run: sudo dpkg -i chrome.deb
+
+    - name: Verificar instalación
+      run: google-chrome --version
     
     - name: Run tests
       run: |
