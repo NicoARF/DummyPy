@@ -31,7 +31,7 @@ jobs:
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O chrome.deb
 
     - name: Install Chrome lasted
-      run: sudo dpkg
+      run: sudo dpkg -i chrome.deb
     
     - name: Run tests
       run: |
