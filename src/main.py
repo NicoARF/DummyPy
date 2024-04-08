@@ -1,10 +1,9 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 
-chrome_driver_path = './drivers/chrome/chromedriverMac'
-
-service = Service(chrome_driver_path)
-driver = webdriver.Chrome(service=service)
+# Configurar el controlador del navegador Chrome
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
 url = "https://www.saucedemo.com/"
 driver.get(url)
