@@ -6,12 +6,13 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--headless")
+
+service=ChromeService(ChromeDriverManager().install())
 # Configurar el controlador del navegador Chrome
-driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
-
-
+driver = webdriver.Chrome(service=service, options=chrome_options)
 
 url = "https://www.saucedemo.com/"
 driver.get(url)
+assert "Swag Labs" in driver.title, print("El título de la página no es 'Swag Labs'")
 
 driver.close()
