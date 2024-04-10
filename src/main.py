@@ -14,5 +14,6 @@ driver = webdriver.Chrome(service=service, options=chrome_options)
 url = "https://www.saucedemo.com/"
 driver.get(url)
 assert "Swag Labs" in driver.title, print("El título de la página no es 'Swag Labs'")
+print(driver.title)
 
 driver.close()
